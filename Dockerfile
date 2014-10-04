@@ -1,0 +1,23 @@
+FROM phusion/baseimage:0.9.15
+MAINTAINER David J. M. Karlsen <david@davidkarlsen.com>
+
+#avoid interactive dialouges from apt:
+ENV DEBIAN_FRONTEND noninteractive
+
+#add repos and update:
+RUN add-apt-repository ppa:webupd8team/java && apt-get update && apt-get -y dist-upgrade
+
+#install java7:
+RUN echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && apt-get -y install oracle-java7-installer
+
+#install java8:
+RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && apt-get -y install oracle-java8-installer
+
+#set java8 default:
+RUN apt-get install oracle-java8-set-default
+
+#hack for hosts
+RUN /usr/bin/workaround-docker-2267
+
+#clean up
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
