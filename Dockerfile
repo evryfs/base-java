@@ -16,8 +16,5 @@ RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true 
 #set java8 default:
 RUN apt-get install oracle-java8-set-default
 
-#hack for hosts
-RUN /usr/bin/workaround-docker-2267
-
 #clean up
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
