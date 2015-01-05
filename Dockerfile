@@ -4,8 +4,11 @@ MAINTAINER David J. M. Karlsen <david@davidkarlsen.com>
 #avoid interactive dialouges from apt:
 ENV DEBIAN_FRONTEND noninteractive
 
-#add repos and update:
-RUN add-apt-repository ppa:webupd8team/java && apt-get update && apt-get -y dist-upgrade
+#add repo:
+RUN add-apt-repository ppa:webupd8team/java 
+
+#make sure future images are always updated:
+ONBUILD apt-get update && apt-get -y dist-upgrade
 
 #install java7:
 RUN echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && apt-get -y install oracle-java7-installer
