@@ -4,8 +4,8 @@ MAINTAINER David J. M. Karlsen <david@davidkarlsen.com>
 #avoid interactive dialouges from apt:
 ENV DEBIAN_FRONTEND noninteractive
 
-#add repo:
-RUN add-apt-repository ppa:webupd8team/java 
+#add repo and update:
+RUN add-apt-repository ppa:webupd8team/java && apt-get update && apt-get -y dist-upgrade
 
 #make sure future images are always updated:
 ONBUILD apt-get update && apt-get -y dist-upgrade
