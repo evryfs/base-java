@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.15
+FROM phusion/baseimage:0.9.16
 MAINTAINER David J. M. Karlsen <david@davidkarlsen.com>
 
 #avoid interactive dialouges from apt:
