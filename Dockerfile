@@ -16,6 +16,8 @@ ONBUILD apt-get update && apt-get -y dist-upgrade
 
 #install java8:
 RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && apt-get -y install oracle-java8-installer
+#needs to be installed after JDK:
+RUN apt-get -y install oracle-java8-unlimited-jce-policy
 
 #set java8 default:
 RUN apt-get install oracle-java8-set-default
