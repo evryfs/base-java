@@ -1,4 +1,4 @@
-FROM ubuntu:trusty
+FROM ubuntu:xenial
 MAINTAINER David J. M. Karlsen <david@davidkarlsen.com>
 
 #avoid interactive dialouges from apt:
