@@ -1,7 +1,7 @@
 docker-java
 ===========
 
-[![](https://badge.imagelayers.io/davidkarlsen/docker-java:latest.svg)](https://imagelayers.io/?images=davidkarlsen/docker-java:latest 'Get your own badge on imagelayers.io')
+[![](https://images.microbadger.com/badges/image/davidkarlsen/docker-java.svg)](https://microbadger.com/images/davidkarlsen/docker-java "Get your own image badge on microbadger.com")
 
 Basic java image based on the phusion-baseimage: https://github.com/phusion/baseimage-docker.
 Installs java 8 through webupd8: https://launchpad.net/~webupd8team/+archive/ubuntu/java .
