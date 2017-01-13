@@ -1,6 +1,7 @@
 docker-java
 ===========
 
+[![](https://images.microbadger.com/badges/version/davidkarlsen/docker-java.svg)](https://microbadger.com/images/davidkarlsen/docker-java "Get your own version badge on microbadger.com")
 [![](https://images.microbadger.com/badges/image/davidkarlsen/docker-java.svg)](https://microbadger.com/images/davidkarlsen/docker-java "Get your own image badge on microbadger.com")
 
 Basic java image based on ubuntu:xenial.
