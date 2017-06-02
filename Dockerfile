@@ -1,5 +1,5 @@
 FROM ubuntu:xenial
-MAINTAINER David J. M. Karlsen <david@davidkarlsen.com>
+LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 
 #avoid interactive dialouges from apt:
 ENV DEBIAN_FRONTEND noninteractive
