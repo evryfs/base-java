@@ -12,6 +12,7 @@ RUN apt update && apt -y install software-properties-common && \
 	apt -y install oracle-java8-installer && \
 	apt -y install oracle-java8-unlimited-jce-policy && \
 	apt -y install oracle-java8-set-default && \
+        apt -y full-upgrade && \
 	apt clean && \
         apt autoclean && \
         rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
@@ -19,7 +20,7 @@ RUN apt update && apt -y install software-properties-common && \
 
 #make sure future images are always updated:
 ONBUILD RUN apt update && \
-		apt -y dist-upgrade && \
+		apt -y full-upgrade && \
 		apt clean && \
 		rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
 		find /var/cache/ -type f -delete
