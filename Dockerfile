@@ -5,18 +5,21 @@ LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 ENV DEBIAN_FRONTEND noninteractive
 
 #add repo, update, install jdk & jce extensions, set as default:
-RUN apt-get update && apt-get -y install software-properties-common && \
+RUN apt update && apt -y install software-properties-common && \
 	add-apt-repository ppa:webupd8team/java && \
-	apt-get update && \
+	apt update && \
 	echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && \
-	apt-get -y install oracle-java8-installer && \
-	apt-get -y install oracle-java8-unlimited-jce-policy && \
-	apt-get -y install oracle-java8-set-default && \
+	apt -y install oracle-java8-installer && \
+	apt -y install oracle-java8-unlimited-jce-policy && \
+	apt -y install oracle-java8-set-default && \
+	apt clean && \
+        apt autoclean && \
+        rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
 	find /var/cache/ -type f -delete
 
 #make sure future images are always updated:
-ONBUILD RUN apt-get update && \
-		apt-get -y dist-upgrade && \
-		apt-get clean && \
+ONBUILD RUN apt update && \
+		apt -y dist-upgrade && \
+		apt clean && \
 		rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
 		find /var/cache/ -type f -delete
