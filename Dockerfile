@@ -8,10 +8,10 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt update && apt -y install software-properties-common && \
 	add-apt-repository ppa:webupd8team/java && \
 	apt update && \
-	echo oracle-java9-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && \
-	apt -y install oracle-java9-installer && \
-	apt -y install oracle-java9-unlimited-jce-policy && \
-	apt -y install oracle-java9-set-default && \
+	echo oracle-java10-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && \
+	apt -y install oracle-java10-installer && \
+	apt -y install oracle-java10-unlimited-jce-policy && \
+	apt -y install oracle-java10-set-default && \
         apt -y full-upgrade && \
 	apt clean && \
         apt autoclean && \
