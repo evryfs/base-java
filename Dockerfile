@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 #add repo, update, install jdk & jce extensions, set as default:
 RUN apt update && apt -y install software-properties-common && \
-	add-apt-repository ppa:webupd8team/java && \
+	add-apt-repository ppa:linuxuprising/java && \
 	apt update && \
 	echo oracle-java10-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && \
 	apt -y install oracle-java10-installer && \
