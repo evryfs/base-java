@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM ubuntu:bionic
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 
 #avoid interactive dialouges from apt:
