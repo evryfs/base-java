@@ -1,4 +1,4 @@
-FROM ubuntu:bionic
+FROM evryfs/docker-baseimage
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 
 RUN	mkdir -p /usr/lib/jvm && \
