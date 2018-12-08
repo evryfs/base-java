@@ -17,10 +17,3 @@ RUN apt update && apt -y install software-properties-common && \
         apt autoclean && \
         rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
 	find /var/cache/ -type f -delete
-
-#make sure future images are always updated:
-ONBUILD RUN apt update && \
-		apt -y full-upgrade && \
-		apt clean && \
-		rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-		find /var/cache/ -type f -delete
