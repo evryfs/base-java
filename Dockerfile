@@ -1,9 +1,6 @@
 FROM evryfs/docker-baseimage
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 
-#avoid interactive dialouges from apt:
-ENV DEBIAN_FRONTEND noninteractive
-
 #add repo, update, install jdk & jce extensions, set as default:
 RUN apt update && apt -y install software-properties-common && \
 	add-apt-repository ppa:webupd8team/java && \
