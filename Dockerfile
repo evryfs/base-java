@@ -1,16 +1,10 @@
 FROM evryfs/docker-baseimage
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
+ARG JDK_VERSION=8u212-b03
+ARG DOWNLOAD_URL=https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u212-b03/OpenJDK8U-jdk_x64_linux_hotspot_8u212b03.tar.gz
 
-#add repo, update, install jdk & jce extensions, set as default:
-RUN apt update && apt -y install software-properties-common && \
-	add-apt-repository ppa:webupd8team/java && \
-	apt update && \
-	echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && \
-	apt -y install oracle-java8-installer && \
-	apt -y install oracle-java8-unlimited-jce-policy && \
-	apt -y install oracle-java8-set-default && \
-        java -Xshare:dump && \
-	apt clean && \
-        apt autoclean && \
-        rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-	find /var/cache/ -type f -delete
+RUN	mkdir -p /usr/lib/jvm && \
+	curl -Ls ${DOWNLOAD_URL} | tar xzv -C /usr/lib/jvm && \
+	sh -c 'for bin in /usr/lib/jvm/jdk-${JDK_VERSION}/bin/*; do update-alternatives --install /usr/bin/$(basename $bin) $(basename $bin) $bin 100 ;done' && \
+	sh -c 'for bin in /usr/lib/jvm/jdk-${JDK_VERSION}/bin/*; do update-alternatives --set $(basename $bin) $bin; done' && \
+	java -Xshare:dump
