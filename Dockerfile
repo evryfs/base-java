@@ -1,7 +1,7 @@
 FROM evryfs/docker-baseimage
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
-ARG JDK_VERSION=8u222-b10
-ARG DOWNLOAD_URL=https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_x64_linux_hotspot_8u222b10.tar.gz
+ARG JDK_VERSION=8u232-b09
+ARG DOWNLOAD_URL=https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_x64_linux_hotspot_8u232b09.tar.gz
 
 RUN	mkdir -p /usr/lib/jvm && \
 	curl -Ls ${DOWNLOAD_URL} | tar xzv -C /usr/lib/jvm && \
