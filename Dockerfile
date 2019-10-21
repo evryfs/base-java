@@ -1,7 +1,7 @@
 FROM evryfs/docker-baseimage
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
-ARG JDK_VERSION=11.0.4+11
-ARG DOWNLOAD_URL=https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_x64_linux_hotspot_11.0.4_11.tar.gz
+ARG JDK_VERSION=11.0.5+10
+ARG DOWNLOAD_URL=https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/11.0.5%2B10/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz
 
 RUN	mkdir -p /usr/lib/jvm && \
 	curl -Ls ${DOWNLOAD_URL} | tar xzv -C /usr/lib/jvm && \
