@@ -1,7 +1,7 @@
 FROM evryfs/docker-baseimage
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
-ARG JDK_VERSION=13+33
-ARG DOWNLOAD_URL=https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13%2B33/OpenJDK13U-jdk_x64_linux_hotspot_13_33.tar.gz
+ARG JDK_VERSION=13.0.1_9
+ARG DOWNLOAD_URL=https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.1%2B9/OpenJDK13U-jdk_x64_linux_hotspot_13.0.1_9.tar.gz
 
 RUN	mkdir -p /usr/lib/jvm && \
 	curl -Ls ${DOWNLOAD_URL} | tar xzv -C /usr/lib/jvm && \
