@@ -1,0 +1,11 @@
+name: Docker Image CI
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: brpaz/hadolint-action@v1.0.2
+    - uses: eshork/gitleaks-action@v1.0.0
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag evryfs/docker-baseimage:$(date +%s)
