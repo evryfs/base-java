@@ -1,7 +1,7 @@
 FROM quay.io/evryfs/base-ubuntu:bionic-20200311
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
-ARG JDK_VERSION=14+36
-ARG DOWNLOAD_URL=https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_x64_linux_hotspot_14_36.tar.gz
+ARG JDK_VERSION=14.0.1+7
+ARG DOWNLOAD_URL=https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14.0.1%2B7/OpenJDK14U-jdk_x64_linux_hotspot_14.0.1_7.tar.gz
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN	mkdir -p /usr/lib/jvm && \
 	curl -Ls ${DOWNLOAD_URL} | tar xzv -C /usr/lib/jvm && \
