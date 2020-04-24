@@ -1,4 +1,4 @@
-FROM quay.io/evryfs/base-ubuntu:bionic-20200311
+FROM quay.io/evryfs/base-ubuntu:bionic-20200403
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 ARG JDK_VERSION=8u252-b09
 ARG DOWNLOAD_URL=https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u252-b09/OpenJDK8U-jdk_x64_linux_hotspot_8u252b09.tar.gz
