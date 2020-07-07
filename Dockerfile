@@ -1,4 +1,4 @@
-FROM quay.io/evryfs/base-ubuntu:focal-20200606
+FROM quay.io/evryfs/base-ubuntu:focal-20200703
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 ARG JDK_VERSION=11.0.7+10
 ARG DOWNLOAD_URL=https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.7%2B10/OpenJDK11U-jdk_x64_linux_hotspot_11.0.7_10.tar.gz
