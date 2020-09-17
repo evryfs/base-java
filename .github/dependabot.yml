@@ -1,0 +1,21 @@
+version: 2
+updates:
+- package-ecosystem: docker
+  directory: "/"
+  schedule:
+    interval: daily
+  target-branch: java14
+- package-ecosystem: docker
+  directory: "/"
+  schedule:
+    interval: daily
+- package-ecosystem: docker
+  directory: "/"
+  schedule:
+    interval: daily
+  target-branch: java8
+- package-ecosystem: docker
+  directory: "/"
+  schedule:
+    interval: daily
+  target-branch: java11
