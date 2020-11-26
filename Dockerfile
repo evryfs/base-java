@@ -1,4 +1,4 @@
-FROM quay.io/evryfs/base-ubuntu:focal-20201008
+FROM quay.io/evryfs/base-ubuntu:focal-20201106
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 ARG JDK_VERSION=15.0.1+9
 ARG DOWNLOAD_URL=https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk-15.0.1%2B9/OpenJDK15U-jdk_x64_linux_hotspot_15.0.1_9.tar.gz
