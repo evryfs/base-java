@@ -1,4 +1,4 @@
-FROM quay.io/evryfs/base-ubuntu:focal-20210325
+FROM quay.io/evryfs/base-ubuntu:focal-20210401
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 ARG JDK_VERSION=8u282-b08
 ARG DOWNLOAD_URL=https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u282-b08/OpenJDK8U-jdk_x64_linux_hotspot_8u282b08.tar.gz
