@@ -1,4 +1,4 @@
-FROM quay.io/evryfs/base-ubuntu:focal-20210713
+FROM quay.io/evryfs/base-ubuntu:focal-20210723
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 ARG JDK_VERSION=16.0.1+9
 ARG DOWNLOAD_URL=https://github.com/AdoptOpenJDK/openjdk16-binaries/releases/download/jdk-16.0.1%2B9/OpenJDK16U-jdk_x64_linux_hotspot_16.0.1_9.tar.gz
