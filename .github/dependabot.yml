@@ -13,11 +13,6 @@ updates:
   directory: "/"
   schedule:
     interval: daily
-  target-branch: java15
-- package-ecosystem: docker
-  directory: "/"
-  schedule:
-    interval: daily
 - package-ecosystem: docker
   directory: "/"
   schedule:
