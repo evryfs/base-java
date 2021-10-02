@@ -4,6 +4,8 @@ on:
     branches:
     - master
     - java*
+    tags:
+    - '*'
   pull_request:
 jobs:
   build:
