@@ -1,7 +1,7 @@
 FROM quay.io/evryfs/base-ubuntu:focal-20220105
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
-ARG JDK_VERSION=8u312-b07
-ARG DOWNLOAD_URL=https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u312-b07/OpenJDK8U-jdk_x64_linux_hotspot_8u312b07.tar.gz
+ARG JDK_VERSION=8u322-b06
+ARG DOWNLOAD_URL=https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jdk_x64_linux_hotspot_8u322b06.tar.gz
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN	mkdir -p /usr/lib/jvm && \
 	curl -Ls ${DOWNLOAD_URL} | tar xzv -C /usr/lib/jvm && \
