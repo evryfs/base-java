@@ -2,13 +2,17 @@ name: build
 on:
   push:
     branches:
-    - master
-    - java*
+    - '*'
     tags:
     - '*'
   pull_request:
 jobs:
   build:
+    permissions:
+      id-token: write
+      contents: read
+    env:
+      IMAGE: quay.io/evryfs/base-java
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -20,7 +24,7 @@ jobs:
       with:
         # list of Docker images to use as base name for tags
         images: |
-          quay.io/evryfs/base-java
+          ${{ env.IMAGE }}
         # generate Docker tags based on the following events/attributes
         tags: |
           type=ref,event=tag
@@ -35,9 +39,17 @@ jobs:
         username: ${{ secrets.QUAY_USERNAME }}
         password: ${{ secrets.QUAY_PASSWORD }}
     - name: Build and push
+      id: build-push
       uses: docker/build-push-action@v2
       with:
         context: .
         push: ${{ github.event_name != 'pull_request' }}
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
+    - uses: sigstore/cosign-installer@v2.0.1
+    - name: cosign
+      if: ${{ github.event_name != 'pull_request' }}
+      env:
+        COSIGN_EXPERIMENTAL: 1
+      #run: cosign sign --oidc-issuer ${env.ACTIONS_ID_TOKEN_REQUEST_URL} ${{ env.IMAGE }}
+      run: cosign sign --oidc-issuer https://token.actions.githubusercontent.com ${{ env.IMAGE }}@${{ steps.build-push.outputs.digest }}
