@@ -39,6 +39,7 @@ jobs:
         username: ${{ secrets.QUAY_USERNAME }}
         password: ${{ secrets.QUAY_PASSWORD }}
     - name: Build and push
+      id: build-push
       uses: docker/build-push-action@v2
       with:
         context: .
@@ -51,4 +52,4 @@ jobs:
       env:
         COSIGN_EXPERIMENTAL: 1
       #run: cosign sign --oidc-issuer ${env.ACTIONS_ID_TOKEN_REQUEST_URL} ${{ env.IMAGE }}
-      run: cosign sign --oidc-issuer https://token.actions.githubusercontent.com ${{ env.IMAGE }}
+      run: cosign sign --oidc-issuer https://token.actions.githubusercontent.com ${{ env.IMAGE }}@${{ steps.build-push.outputs.digest }}
