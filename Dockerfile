@@ -1,4 +1,4 @@
-FROM quay.io/evryfs/base-ubuntu:jammy-20220428
+FROM quay.io/evryfs/base-ubuntu:jammy-20220531
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 ARG JDK_VERSION=8u332-b09
 ARG DOWNLOAD_URL=https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u332-b09/OpenJDK8U-jdk_x64_linux_hotspot_8u332b09.tar.gz
