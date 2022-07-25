@@ -40,21 +40,13 @@ jobs:
         password: ${{ secrets.QUAY_PASSWORD }}
     - name: Build and push
       id: build-push
-<<<<<<< HEAD
-      uses: docker/build-push-action@v2
-=======
       uses: docker/build-push-action@v3
->>>>>>> master
       with:
         context: .
         push: ${{ github.event_name != 'pull_request' }}
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
-<<<<<<< HEAD
-    - uses: sigstore/cosign-installer@v2.0.1
-=======
     - uses: sigstore/cosign-installer@v2.4.1
->>>>>>> master
     - name: cosign
       if: ${{ github.event_name != 'pull_request' }}
       env:
