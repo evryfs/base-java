@@ -1,4 +1,4 @@
-FROM quay.io/evryfs/base-ubuntu:jammy-20220531
+FROM quay.io/evryfs/base-ubuntu:jammy-20220801
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 ARG JDK_VERSION=18.0.2+9
 ARG DOWNLOAD_URL=https://github.com/adoptium/temurin18-binaries/releases/download/jdk-18.0.2%2B9/OpenJDK18U-jdk_x64_linux_hotspot_18.0.2_9.tar.gz
