@@ -46,7 +46,7 @@ jobs:
         push: ${{ github.event_name != 'pull_request' }}
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
-    - uses: sigstore/cosign-installer@v2.7.0
+    - uses: sigstore/cosign-installer@v2.8.0
     - name: cosign
       if: ${{ github.event_name != 'pull_request' }}
       env:
