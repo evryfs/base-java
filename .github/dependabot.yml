@@ -8,11 +8,6 @@ updates:
   directory: "/"
   schedule:
     interval: daily
-  target-branch: java17
-- package-ecosystem: docker
-  directory: "/"
-  schedule:
-    interval: daily
 - package-ecosystem: docker
   directory: "/"
   schedule:
@@ -23,3 +18,13 @@ updates:
   schedule:
     interval: daily
   target-branch: java11
+- package-ecosystem: docker
+  directory: "/"
+  schedule:
+    interval: daily
+  target-branch: java17
+- package-ecosystem: docker
+  directory: "/"
+  schedule:
+    interval: daily
+  target-branch: java21
