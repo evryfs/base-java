@@ -1,7 +1,7 @@
 FROM quay.io/evryfs/base-ubuntu:jammy-20231128
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
-ARG JDK_VERSION=19.0.1+10
-ARG DOWNLOAD_URL=https://github.com/adoptium/temurin19-binaries/releases/download/jdk-19.0.1%2B10/OpenJDK19U-jdk_x64_linux_hotspot_19.0.1_10.tar.gz
+ARG JDK_VERSION=17.0.7+7
+ARG DOWNLOAD_URL=https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.7%2B7/OpenJDK17U-jdk_x64_linux_hotspot_17.0.7_7.tar.gz
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN	mkdir -p /usr/lib/jvm && \
 	curl -Ls ${DOWNLOAD_URL} | tar xzv -C /usr/lib/jvm && \
