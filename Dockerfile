@@ -1,4 +1,4 @@
-FROM quay.io/evryfs/base-ubuntu:jammy-20240427
+FROM quay.io/evryfs/base-ubuntu:jammy-20231128
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 ARG JDK_VERSION=21.0.3+9
 ARG DOWNLOAD_URL=https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.3%2B9/OpenJDK21U-jdk_x64_linux_hotspot_21.0.3_9.tar.gz
