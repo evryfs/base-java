@@ -46,10 +46,10 @@ jobs:
         push: ${{ github.event_name != 'pull_request' }}
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
-    - uses: sigstore/cosign-installer@v2.8.1
+    - uses: sigstore/cosign-installer@v3.5.0
     - name: cosign
       if: ${{ github.event_name != 'pull_request' }}
       env:
         COSIGN_EXPERIMENTAL: 1
       #run: cosign sign --oidc-issuer ${env.ACTIONS_ID_TOKEN_REQUEST_URL} ${{ env.IMAGE }}
-      run: cosign sign --oidc-issuer https://token.actions.githubusercontent.com ${{ env.IMAGE }}@${{ steps.build-push.outputs.digest }}
+      run: cosign sign -y --oidc-issuer https://token.actions.githubusercontent.com ${{ env.IMAGE }}@${{ steps.build-push.outputs.digest }}
