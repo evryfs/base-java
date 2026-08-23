@@ -1,4 +1,4 @@
-FROM quay.io/evryfs/base-ubuntu:resolute-20260421
+FROM quay.io/evryfs/base-ubuntu:resolute-20260724.1
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 ARG JDK_VERSION=jdk-25.0.4.1+1
 ARG DOWNLOAD_URL=https://github.com/adoptium/temurin25-binaries/releases/download/jdk-25.0.4.1%2B1/OpenJDK25U-jdk_x64_linux_hotspot_25.0.4.1_1.tar.gz
