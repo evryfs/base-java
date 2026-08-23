@@ -1,7 +1,7 @@
-FROM quay.io/evryfs/base-ubuntu:jammy-20231128
+FROM quay.io/evryfs/base-ubuntu:resolute-20260724.1
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
-ARG JDK_VERSION=25.0.3+9
-ARG DOWNLOAD_URL=https://github.com/adoptium/temurin25-binaries/releases/download/jdk-25.0.3%2B9/OpenJDK25U-jdk_x64_linux_hotspot_25.0.3_9.tar.gz
+ARG JDK_VERSION=25.0.4.1+1
+ARG DOWNLOAD_URL=https://github.com/adoptium/temurin25-binaries/releases/download/jdk-25.0.4.1%2B1/OpenJDK25U-jdk_x64_linux_hotspot_25.0.4.1_1.tar.gz
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN	mkdir -p /usr/lib/jvm && \
 	curl -Ls ${DOWNLOAD_URL} | tar xzv -C /usr/lib/jvm && \
